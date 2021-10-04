@@ -6,16 +6,17 @@
   <body
     <div></div>
     <div style='height: 60px; margin: 200'></div>
-    <form action="?" method="POST">
+    <form action="?" method="POST" id="demo-form">
       <input type="text">
+      <button class="g-recaptcha" 
+        data-sitekey="6LfoGKocAAAAAAgkDguczt8CCy1PdkR4ADst77OT" 
+        data-callback='onSubmit' 
+        data-action='submit'>Submit</button>
     </form>
     <script>
-      function captchaCallback(response){
-        //console.log(response);
-        if(typeof Captcha!=="undefined"){
-          Captcha.postMessage(response);
-        }
-      }
-    </script>
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+ </script>
   </body>
 </html>
