@@ -13,10 +13,16 @@
         data-callback='onSubmit' 
         data-action='submit'>Submit</button>
     </form>
+<script src="https://www.google.com/recaptcha/api.js?render=6LfoGKocAAAAAAgkDguczt8CCy1PdkR4ADst77OT"></script>
     <script>
-   function onSubmit(token) {
-     document.getElementById("demo-form").submit();
-   }
- </script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LfoGKocAAAAAAgkDguczt8CCy1PdkR4ADst77OT', {action: 'submit'}).then(function(token) {
+              console.log(token);
+          });
+        });
+      }
+  </script>
   </body>
 </html>
