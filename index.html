@@ -3,9 +3,9 @@
     <title>reCAPTCHA</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
-  <body
+  <body>
     <div></div>
-    <div style='height: 60px; margin: 200'></div>
+    <div style='height: 160px; margin: 200'></div>
     <form action="?" method="POST" id="demo-form">
       <input type="text">
       <button class="g-recaptcha" 
@@ -15,14 +15,14 @@
     </form>
 <script src="https://www.google.com/recaptcha/api.js?render=6LfoGKocAAAAAAgkDguczt8CCy1PdkR4ADst77OT"></script>
     <script>
-      function onClick(e) {
+     
         e.preventDefault();
         grecaptcha.ready(function() {
           grecaptcha.execute('6LfoGKocAAAAAAgkDguczt8CCy1PdkR4ADst77OT', {action: 'submit'}).then(function(token) {
               console.log(token);
           });
         });
-      }
+    
   </script>
   </body>
 </html>
